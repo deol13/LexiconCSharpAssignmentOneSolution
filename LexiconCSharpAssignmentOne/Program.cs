@@ -15,9 +15,8 @@ namespace LexiconCSharpAssignmentOne
                     "\n 2: Subtraction" +
                     "\n 3: Division" +
                     "\n 4: Multiplication" +
-                    "\n 5: Percentages, not working" +
-                    "\n 6: Square Roots, not working" +
-                    "\n 7: Power of, not working" +   
+                    "\n 5: Square Roots" +
+                    "\n 6: Power of" +   
                     "\n 99: Exit");
 
                 int.TryParse(Console.ReadLine(), out int userSelection);
@@ -42,15 +41,11 @@ namespace LexiconCSharpAssignmentOne
                         break;
                     case 5:
                         Console.Clear();
-                        percentagesMethod();    //, not working
+                        squareRootsMethod();
                         break;
                     case 6:
                         Console.Clear();
-                        squareRootsMethod();    //, not working
-                        break;
-                    case 7:
-                        Console.Clear();
-                        powerOfMethod();        //, not working
+                        powerOfMethod();
                         break;
                     case 99:
                         Console.WriteLine("Thank you for trying out my calculator!");
@@ -89,8 +84,6 @@ namespace LexiconCSharpAssignmentOne
             {
                 Console.WriteLine("Either {0} or {1} isn't a number!", stringInputOne, stringInputTwo);
             }
-
-            Console.ReadKey();
         }
 
         //Waits for the user to input two numbers then substracts them together
@@ -114,8 +107,6 @@ namespace LexiconCSharpAssignmentOne
             {
                 Console.WriteLine("Either {0} or {1} isn't a number!", stringInputOne, stringInputTwo);
             }
-
-            Console.ReadKey();
         }
 
         //Waits for the user to input two numbers then divides them together
@@ -146,10 +137,6 @@ namespace LexiconCSharpAssignmentOne
             {
                 Console.WriteLine("Either {0} or {1} isn't a number!", stringNumerator, stringDenominator);
             }
-
-            
-
-            Console.ReadKey();
         }
 
         //Waits for the user to input two numbers then multiplicate them together
@@ -173,23 +160,47 @@ namespace LexiconCSharpAssignmentOne
             {
                 Console.WriteLine("Either {0} or {1} isn't a number!", stringInputOne, stringInputTwo);
             }
-
-            Console.ReadKey();
-        }
-
-        private static void percentagesMethod()
-        {
-
         }
 
         private static void squareRootsMethod()
         {
+            double number = 0;
 
+            //Let's the user input two numbers
+            Console.Write("Input a number: ");
+            string stringInput = Console.ReadLine();
+
+            if (double.TryParse(stringInput, out number))
+            {
+                //Add them together directly in the writeline because there is no need to save the results
+                Console.WriteLine("square root of {0} = " + Math.Sqrt(number), number );
+            }
+            else
+            {
+                Console.WriteLine("Either {0} isn't a number!", stringInput);
+            }
         }
 
         private static void powerOfMethod()
         {
+            double numberToBePowered = 0;
+            double power = 0;
 
+            //Let's the user input two numbers
+            Console.Write("Input the number that is going to be powered: ");
+            string stringInputOne = Console.ReadLine();
+            Console.Write("Input power: ");
+            string stringInputPower = Console.ReadLine();
+
+            if (double.TryParse(stringInputOne, out numberToBePowered) && double.TryParse(stringInputPower, out power))
+            {
+                //Add them together directly in the writeline because there is no need to save the results
+                Console.WriteLine("{0}^{1} = " + Math.Pow(numberToBePowered, power), numberToBePowered, power);
+            }
+            else
+            {
+                Console.WriteLine("Either {0} or {1} isn't a number!", stringInputOne, stringInputPower);
+            }
         }
     }
 }
