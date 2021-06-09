@@ -100,7 +100,7 @@ namespace LexiconCSharpAssignmentOne
 
             if (decimal.TryParse(stringInputOne, out firstNumber) && decimal.TryParse(stringInputTwo, out secondNumber))
             {
-                //Add them together directly in the writeline because there is no need to save the results
+                //Substract them directly in the writeline because there is no need to save the results
                 Console.WriteLine("{0} - {1} = " + (firstNumber - secondNumber), firstNumber, secondNumber);
             }
             else
@@ -153,7 +153,7 @@ namespace LexiconCSharpAssignmentOne
 
             if (decimal.TryParse(stringInputOne, out firstNumber) && decimal.TryParse(stringInputTwo, out secondNumber))
             {
-                //Add them together directly in the writeline because there is no need to save the results
+                //Multiplicates them together directly in the writeline because there is no need to save the results
                 Console.WriteLine("{0} * {1} = " + (firstNumber * secondNumber), firstNumber, secondNumber);
             }
             else
@@ -162,17 +162,18 @@ namespace LexiconCSharpAssignmentOne
             }
         }
 
+        //Takes one input from the user then square roots it
         private static void squareRootsMethod()
         {
             double number = 0;
 
-            //Let's the user input two numbers
+            //Let's the user input a number
             Console.Write("Input a number: ");
             string stringInput = Console.ReadLine();
 
             if (double.TryParse(stringInput, out number))
             {
-                //Add them together directly in the writeline because there is no need to save the results
+                //Square root it directly in the writeline because there is no need to save the results
                 Console.WriteLine("square root of {0} = " + Math.Sqrt(number), number );
             }
             else
@@ -181,6 +182,8 @@ namespace LexiconCSharpAssignmentOne
             }
         }
 
+        //Takes two numbers from the user, the number that will be powered and the power.
+        //Then Math.pow them.
         private static void powerOfMethod()
         {
             double numberToBePowered = 0;
@@ -194,7 +197,7 @@ namespace LexiconCSharpAssignmentOne
 
             if (double.TryParse(stringInputOne, out numberToBePowered) && double.TryParse(stringInputPower, out power))
             {
-                //Add them together directly in the writeline because there is no need to save the results
+                //Math.pow directly in the writeline because there is no need to save the results
                 Console.WriteLine("{0}^{1} = " + Math.Pow(numberToBePowered, power), numberToBePowered, power);
             }
             else
