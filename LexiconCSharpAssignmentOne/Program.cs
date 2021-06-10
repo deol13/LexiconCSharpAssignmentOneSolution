@@ -25,27 +25,27 @@ namespace LexiconCSharpAssignmentOne
                 {
                     case 1:
                         Console.Clear();
-                        additionMethod();
+                        AdditionMethod();
                         break;
                     case 2:
                         Console.Clear();
-                        substractionMethod();
+                        SubstractionMethod();
                         break;
                     case 3:
                         Console.Clear();
-                        divisionMethod();
+                        DivisionMethod();
                         break;
                     case 4:
                         Console.Clear();
-                        multiplicationMethod();
+                        MultiplicationMethod();
                         break;
                     case 5:
                         Console.Clear();
-                        squareRootsMethod();
+                        SquareRootsMethod();
                         break;
                     case 6:
                         Console.Clear();
-                        Console.WriteLine("Result: " + userInputForPowerOf());
+                        Console.WriteLine("Result: " + UserInputForPowerOf());
                         break;
                     case 99:
                         Console.WriteLine("Thank you for trying out my calculator!");
@@ -62,7 +62,7 @@ namespace LexiconCSharpAssignmentOne
         }
 
         //Waits for the user to input two numbers then adds them together
-        private static void additionMethod()
+        private static void AdditionMethod()
         {
             decimal firstNumber = 0;
             decimal secondNumber = 0;
@@ -87,7 +87,7 @@ namespace LexiconCSharpAssignmentOne
         }
 
         //Waits for the user to input two numbers then substracts them together
-        private static void substractionMethod()
+        private static void SubstractionMethod()
         {
             decimal firstNumber = 0;
             decimal secondNumber = 0;
@@ -110,7 +110,7 @@ namespace LexiconCSharpAssignmentOne
         }
 
         //Waits for the user to input two numbers then divides them together
-        private static void divisionMethod()
+        private static void DivisionMethod()
         {
             decimal numeratorNumber = 0;
             decimal denominatorNumber = 0;
@@ -140,7 +140,7 @@ namespace LexiconCSharpAssignmentOne
         }
 
         //Waits for the user to input two numbers then multiplicate them together
-        private static void multiplicationMethod()
+        private static void MultiplicationMethod()
         {
             decimal firstNumber = 0;
             decimal secondNumber = 0;
@@ -163,7 +163,7 @@ namespace LexiconCSharpAssignmentOne
         }
 
         //Takes one input from the user then square roots it
-        private static void squareRootsMethod()
+        private static void SquareRootsMethod()
         {
             double number = 0;
 
@@ -182,10 +182,10 @@ namespace LexiconCSharpAssignmentOne
             }
         }
 
-        //////////////////////////OLD
+        /*
         //Takes two numbers from the user, the number that will be powered and the power.
         //Then Math.pow them.
-        private static void powerOfMethod()
+        private static void PowerOfMethod()
         {
             double numberToBePowered = 0;
             double power = 0;
@@ -206,9 +206,10 @@ namespace LexiconCSharpAssignmentOne
                 Console.WriteLine("Either {0} or {1} isn't a number!", stringInputOne, stringInputPower);
             }
         }
+        */
 
         //Take the input from the user and does the checks on those inputs before starting the recursive function to calculate power of
-        private static double userInputForPowerOf()
+        private static double UserInputForPowerOf()
         {
             double numberToBePowered = 0;
             int power = 0;
@@ -243,7 +244,7 @@ namespace LexiconCSharpAssignmentOne
         //Calculate power of but with a recursive function.
         //It recives the current result(starts as numberToBePowered),
         //the number that is going to be powered and power as a count so the function knows when to stop
-        private static double powerOfMethod(double currentValue, double numberToBePowered, int count)
+        private static double PowerOfMethod(double currentValue, double numberToBePowered, int count)
         {
             //Multiplicate the current value with numberToBePowered each time the function is called just like with 2^3, 2*2=4*2=8
             currentValue *= numberToBePowered;
