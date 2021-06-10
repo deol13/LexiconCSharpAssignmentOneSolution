@@ -45,7 +45,7 @@ namespace LexiconCSharpAssignmentOne
                         break;
                     case 6:
                         Console.Clear();
-                        powerOfMethod();
+                        Console.WriteLine("Result: " + userInputForPowerOf());
                         break;
                     case 99:
                         Console.WriteLine("Thank you for trying out my calculator!");
@@ -182,6 +182,7 @@ namespace LexiconCSharpAssignmentOne
             }
         }
 
+        //////////////////////////OLD
         //Takes two numbers from the user, the number that will be powered and the power.
         //Then Math.pow them.
         private static void powerOfMethod()
@@ -204,6 +205,59 @@ namespace LexiconCSharpAssignmentOne
             {
                 Console.WriteLine("Either {0} or {1} isn't a number!", stringInputOne, stringInputPower);
             }
+        }
+
+        //Take the input from the user and does the checks on those inputs before starting the recursive function to calculate power of
+        private static double userInputForPowerOf()
+        {
+            double numberToBePowered = 0;
+            int power = 0;
+
+            //Let's the user input two numbers
+            Console.Write("Input the number that is going to be powered(Positiv number): ");
+            string stringInputOne = Console.ReadLine();
+            Console.Write("Input power (integer, positiv or negativ): ");
+            string stringInputPower = Console.ReadLine();
+
+            if (double.TryParse(stringInputOne, out numberToBePowered) && int.TryParse(stringInputPower, out power))
+            {
+                //If power is above 0 we call powerOfMethod then return the value
+                //If power is negativ then we still call powerOfMethod (But change power to positiv)
+                ////but we divide 1 by the result and send that back.
+                //And if power is 0 we just return 1
+                if (power > 0)
+                    return powerOfMethod(numberToBePowered, numberToBePowered, --power);
+                else if (power < 0)
+                    return 1/powerOfMethod(numberToBePowered, numberToBePowered, ++power*-1);
+                else
+                    return 1;
+            }
+            else
+            {
+                Console.WriteLine("Either {0} or {1} isn't a number!", stringInputOne, stringInputPower);
+            }
+
+            return 0.0;
+        }
+
+        //Calculate power of but with a recursive function.
+        //It recives the current result(starts as numberToBePowered),
+        //the number that is going to be powered and power as a count so the function knows when to stop
+        private static double powerOfMethod(double currentValue, double numberToBePowered, int count)
+        {
+            //Multiplicate the current value with numberToBePowered each time the function is called just like with 2^3, 2*2=4*2=8
+            currentValue *= numberToBePowered;
+            
+            //Reduce count each time so the function knows when to stop
+            count--;
+
+            //If count has reached 0, return, if not then the function continues to call itself
+            if (count > 0)
+            {
+                return powerOfMethod(currentValue, numberToBePowered, count);
+            }
+            else
+                return currentValue;
         }
     }
 }
