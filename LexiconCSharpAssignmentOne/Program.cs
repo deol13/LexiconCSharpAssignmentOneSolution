@@ -16,7 +16,7 @@ namespace LexiconCSharpAssignmentOne
                     "\n 3: Division" +
                     "\n 4: Multiplication" +
                     "\n 5: Square Roots" +
-                    "\n 6: Power of" +   
+                    "\n 6: Power of" +
                     "\n 99: Exit");
 
                 int.TryParse(Console.ReadLine(), out int userSelection);
@@ -75,7 +75,7 @@ namespace LexiconCSharpAssignmentOne
 
             //int.TryParse returns true or false depending on if it could parse the string to an int
             //So we use that to see if both inputs are infact numbers. 
-            if(decimal.TryParse(stringInputOne, out firstNumber) && decimal.TryParse(stringInputTwo, out secondNumber))
+            if (decimal.TryParse(stringInputOne, out firstNumber) && decimal.TryParse(stringInputTwo, out secondNumber))
             {
                 //Add them together directly in the writeline because there is no need to save the results
                 Console.WriteLine("{0} + {1} = " + (firstNumber + secondNumber), firstNumber, secondNumber);
@@ -174,7 +174,7 @@ namespace LexiconCSharpAssignmentOne
             if (double.TryParse(stringInput, out number))
             {
                 //Square root it directly in the writeline because there is no need to save the results
-                Console.WriteLine("square root of {0} = " + Math.Sqrt(number), number );
+                Console.WriteLine("square root of {0} = " + Math.Sqrt(number), number);
             }
             else
             {
@@ -228,7 +228,7 @@ namespace LexiconCSharpAssignmentOne
                 if (power > 0)
                     return powerOfMethod(numberToBePowered, numberToBePowered, --power);
                 else if (power < 0)
-                    return 1/powerOfMethod(numberToBePowered, numberToBePowered, ++power*-1);
+                    return 1 / powerOfMethod(numberToBePowered, numberToBePowered, ++power * -1);
                 else
                     return 1;
             }
@@ -247,7 +247,7 @@ namespace LexiconCSharpAssignmentOne
         {
             //Multiplicate the current value with numberToBePowered each time the function is called just like with 2^3, 2*2=4*2=8
             currentValue *= numberToBePowered;
-            
+
             //Reduce count each time so the function knows when to stop
             count--;
 
