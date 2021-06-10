@@ -123,8 +123,8 @@ namespace LexiconCSharpAssignmentOne
 
             if (decimal.TryParse(stringNumerator, out numeratorNumber) && decimal.TryParse(stringDenominator, out denominatorNumber))
             {
-                //Quick check if either number is a 0
-                if (numeratorNumber != 0 && denominatorNumber != 0)
+                //Quick check if denominator is 0
+                if (denominatorNumber != 0)
                 {
                     Console.WriteLine("{0} / {1} = " + (numeratorNumber / denominatorNumber), numeratorNumber, denominatorNumber);
                 }
