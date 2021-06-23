@@ -23,7 +23,7 @@ namespace LexiconCSharpAssignmentOne
                 }
             }
             else
-                throw new ArgumentException("No numbers were inputed to addition on a list");
+                throw new ArgumentException("No numbers were inputed to addition on a list.");
 
             return totalValue;
         }
@@ -46,7 +46,7 @@ namespace LexiconCSharpAssignmentOne
                 }
             }
             else
-                throw new ArgumentException("No numbers were inputed to substraction on a list");
+                throw new ArgumentException("No numbers were inputed to substraction on a list.");
              return totalValue;
         }
 
@@ -76,28 +76,9 @@ namespace LexiconCSharpAssignmentOne
         }
 
         /*
-        //Takes two numbers from the user, the number that will be powered and the power.
-        //Then Math.pow them.
-        public void PowerOfMethod()
+        public void PowerOfMethodMath(double num, int numPower)
         {
-            double numberToBePowered = 0;
-            double power = 0;
-
-            //Let's the user input two numbers
-            Console.Write("Input the number that is going to be powered: ");
-            string stringInputOne = Console.ReadLine();
-            Console.Write("Input power: ");
-            string stringInputPower = Console.ReadLine();
-
-            if (double.TryParse(stringInputOne, out numberToBePowered) && double.TryParse(stringInputPower, out power))
-            {
-                //Math.pow directly in the writeline because there is no need to save the results
-                Console.WriteLine("{0}^{1} = " + Math.Pow(numberToBePowered, power), numberToBePowered, power);
-            }
-            else
-            {
-                Console.WriteLine("Either {0} or {1} isn't a number!", stringInputOne, stringInputPower);
-            }
+            return Math.Pow(num1, power);
         }
         */
 
