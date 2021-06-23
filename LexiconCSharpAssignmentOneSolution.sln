@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LexiconCSharpAssignmentOne", "LexiconCSharpAssignmentOne\LexiconCSharpAssignmentOne.csproj", "{3E309A6A-7C62-4DF4-BA74-2076DD280362}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LexiconCSharpAssignmentOne", "LexiconCSharpAssignmentOne\LexiconCSharpAssignmentOne.csproj", "{3E309A6A-7C62-4DF4-BA74-2076DD280362}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LexiconCSharpAssignmentOne.Tests", "LexiconCSharpAssignmentOne.Tests\LexiconCSharpAssignmentOne.Tests.csproj", "{03D69D64-D1CF-4367-97B0-01BA2614690A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3E309A6A-7C62-4DF4-BA74-2076DD280362}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E309A6A-7C62-4DF4-BA74-2076DD280362}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E309A6A-7C62-4DF4-BA74-2076DD280362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03D69D64-D1CF-4367-97B0-01BA2614690A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03D69D64-D1CF-4367-97B0-01BA2614690A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03D69D64-D1CF-4367-97B0-01BA2614690A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03D69D64-D1CF-4367-97B0-01BA2614690A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
