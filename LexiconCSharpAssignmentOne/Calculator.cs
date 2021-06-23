@@ -6,98 +6,73 @@ namespace LexiconCSharpAssignmentOne
 {
     public class Calculator
     {
-        public string AdditionMethod(double num1, double num2)
+        public double AdditionMethod(double num1, double num2)
         {
-            //Add them together directly in the writeline because there is no need to save the results
-            string output = $"{num1} + {num2} = " + (num1 + num2);
-
-            return output;
+            return num1 + num2;
         }
         
-        public string AdditionMethod(double[] numbers)
+        public double AdditionMethod(double[] numbers)
         {
             double totalValue = 0;
-            string output = "";
 
             if (numbers.Length > 0)
             {
-                output = numbers[0].ToString();
-                totalValue = numbers[0];
-
-                for (int i = 1; i < numbers.Length; i++)
+                foreach (double num in numbers)
                 {
-                    output += $" + {numbers[i]}";
-                    totalValue += numbers[i];
+                    totalValue += num;
                 }
-                output += $" = {totalValue}";
             }
             else
                 throw new IndexOutOfRangeException("No numbers were inputed to addition on a list");
 
-            return output;
+            return totalValue;
         }
 
-        public string SubstractionMethod(double num1, double num2)
+        public double SubstractionMethod(double num1, double num2)
         {
-            //Substract them directly in a string because there is no need to save the results
-            string output = $"{num1} - {num2} = " + (num1 - num2);
-
-            return output;
+            return num1 - num2;
         }
         
-        public string SubstractionMethod(double[] numbers)
+        public double SubstractionMethod(double[] numbers)
         {
             double totalValue = 0;
-            string output = "";
 
             if (numbers.Length > 0)
             {
-                output = numbers[0].ToString();
                 totalValue = numbers[0];
-
                 for (int i = 1; i < numbers.Length; i++)
                 {
-                    output += $" - {numbers[i]}";
                     totalValue -= numbers[i];
                 }
-                output += $" = {totalValue}";
             }
             else
                 throw new IndexOutOfRangeException("No numbers were inputed to substraction on a list");
-
-            return output;
+             return totalValue;
         }
 
         //Waits for the user to input two numbers then divides them together
-        public string DivisionMethod(double num1, double num2)
+        public double DivisionMethod(double num1, double num2)
         {
-            string output;
+            double totalValue = 0;
+
             if (!num2.Equals(0))
-                output = $"{num1} / {num2} = " + (num1 / num2);
+                totalValue = num1 / num2;
             else
                 throw new DivideByZeroException();
 
-            return output;
+            return totalValue;
         }
 
         //Waits for the user to input two numbers then multiplicate them together
-        public string MultiplicationMethod(double num1, double num2)
+        public double MultiplicationMethod(double num1, double num2)
         {
-            //Multiplicates them together directly in the writeline because there is no need to save the results
-            string output = $"{num1} * {num2} = " + (num1 * num2);
-
-            return output;
+            return num1*num2;
         }
 
         //Takes one input from the user then square roots it
-        public string SquareRootsMethod(double number)
+        public double SquareRootsMethod(double number)
         {
-            string outPutAsString = "";
-
-            //Square root it directly to a string because there is no need to save the results
-            outPutAsString = $"square root of {number} = " + Math.Sqrt(number);
-            
-            return outPutAsString;
+            return Math.Sqrt(number);
         }
 
         /*

@@ -15,18 +15,6 @@ namespace LexiconCSharpAssignmentOne
     //
     //What happens if we make Program public? Can we access it from unit tester? If so that will solve the parse problem
     //////////////////////////////////////////
-    /*
-     * This is how we can show info inside a class without either the class or main being reliant on each other, thus getting loose coupling in both
-    public string Info()
-    {
-        return $"---- Car Info ----\nId: {id}\nBrand: {brand}\nModel: {model}\nColor {color}\nYear: {year}\nHp: {hp}";
-    }
-    or
-    public override string ToString()
-    {
-        return Info();
-    }
-    */
 
     //////////////////////////////////
     //In git changes -> ... -> new branch !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -67,29 +55,29 @@ namespace LexiconCSharpAssignmentOne
                             Console.Clear();
                             num1 = AskForInputDouble("number");
                             num2 = AskForInputDouble("number");
-                            Console.WriteLine(calc.AdditionMethod(num1, num2));
+                            Console.WriteLine("Result: " + calc.AdditionMethod(num1, num2));
                             break;
                         case 2:
                             Console.Clear();
                             num1 = AskForInputDouble("number");
                             num2 = AskForInputDouble("number");
-                            Console.WriteLine(calc.SubstractionMethod(num1, num2));
+                            Console.WriteLine("Result: " + calc.SubstractionMethod(num1, num2));
                             break;
                         case 3:
                             Console.Clear();
                             num1 = AskForInputDouble("numerator");
                             num2 = AskForInputDouble("denominator");
-                            Console.WriteLine(calc.DivisionMethod(num1, num2));
+                            Console.WriteLine("Result: " + calc.DivisionMethod(num1, num2));
                             break;
                         case 4:
                             Console.Clear();
                             num1 = AskForInputDouble("number");
                             num2 = AskForInputDouble("number");
-                            Console.WriteLine(calc.MultiplicationMethod(num1, num2));
+                            Console.WriteLine("Result: " + calc.MultiplicationMethod(num1, num2));
                             break;
                         case 5:
                             Console.Clear();
-                            Console.WriteLine(calc.SquareRootsMethod(AskForInputDouble("number to be squared")));
+                            Console.WriteLine("Result: " + calc.SquareRootsMethod(AskForInputDouble("number to be squared")));
                             break;
                         case 6:
                             Console.Clear();
@@ -100,12 +88,12 @@ namespace LexiconCSharpAssignmentOne
                         case 7:
                             Console.Clear();
                             double[] addNumArr = AskForAnArray("added together");
-                            Console.WriteLine(calc.AdditionMethod(addNumArr));
+                            Console.WriteLine("Result: " + calc.AdditionMethod(addNumArr));
                             break;
                         case 8:
                             Console.Clear();
                             double[] subNumArr = AskForAnArray("substracted together");
-                            Console.WriteLine(calc.SubstractionMethod(subNumArr));
+                            Console.WriteLine("Result: " + calc.SubstractionMethod(subNumArr));
                             break;
                         case 99:
                             Console.WriteLine("Thank you for trying out my calculator!");
@@ -116,15 +104,15 @@ namespace LexiconCSharpAssignmentOne
                             break;
                     }
                 }
-                catch (FormatException e)
-                {
-                    Console.WriteLine(e.Message);
-                }
                 catch(DivideByZeroException e)
                 {
                     Console.WriteLine(e.Message);
                 }
                 catch(IndexOutOfRangeException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                catch (FormatException e)
                 {
                     Console.WriteLine(e.Message);
                 }
