@@ -7,7 +7,47 @@ namespace LexiconCSharpAssignmentOne.Tests
     public class CalculatorTests
     {
         [Fact]
-        public void Test1()
+        public void AdditionValidResult()
+        {
+
+        }
+        [Fact]
+        public void SubstractionValidResult()
+        {
+
+        }
+        [Fact]
+        public void DivisonValidResult()
+        {
+
+        }
+        [Fact]
+        public void DivisonThrowDivideByZeroException()
+        {
+
+        }
+        [Fact]
+        public void MultiplicationValidResult()
+        {
+
+        }
+        [Fact]
+        public void SquareRootValidResult()
+        {
+
+        }
+        [Fact]
+        public void PowerOfMethodValidResult()
+        {
+
+        }
+        [Fact]
+        public void AdditionArrayValidResult()
+        {
+
+        }
+        [Fact]
+        public void SubstractionArrayValidResult()
         {
 
         }
