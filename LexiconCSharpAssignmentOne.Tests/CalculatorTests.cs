@@ -37,7 +37,17 @@ namespace LexiconCSharpAssignmentOne.Tests
 
         }
         [Fact]
-        public void PowerOfMethodValidResult()
+        public void PowerOfMethodValidPositivParameter()
+        {
+
+        }
+        [Fact]
+        public void PowerOfMethodValidNegativParameter()
+        {
+
+        }
+        [Fact]
+        public void PowerOfMethodZeroAsPower()
         {
 
         }

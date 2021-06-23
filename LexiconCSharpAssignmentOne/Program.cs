@@ -83,7 +83,7 @@ namespace LexiconCSharpAssignmentOne
                             Console.Clear();
                             num1 = AskForInputDouble("number");
                             int power = AskForInputInt("a power");
-                            Console.WriteLine("Result: " + calc.StartPowerOfMethod(num1, num1, power));//UserInputForPowerOf(calc, num1, power));
+                            Console.WriteLine("Result: " + calc.PowerOfMethod(num1, power));//UserInputForPowerOf(calc, num1, power));
                             break;
                         case 7:
                             Console.Clear();
