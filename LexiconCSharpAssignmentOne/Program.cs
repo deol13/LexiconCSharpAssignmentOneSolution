@@ -83,7 +83,7 @@ namespace LexiconCSharpAssignmentOne
                             Console.Clear();
                             num1 = AskForInputDouble("number");
                             int power = AskForInputInt("a power");
-                            Console.WriteLine("Result: " + UserInputForPowerOf(calc, num1, power));
+                            Console.WriteLine("Result: " + calc.StartPowerOfMethod(num1, num1, power));//UserInputForPowerOf(calc, num1, power));
                             break;
                         case 7:
                             Console.Clear();
@@ -108,7 +108,7 @@ namespace LexiconCSharpAssignmentOne
                 {
                     Console.WriteLine(e.Message);
                 }
-                catch(IndexOutOfRangeException e)
+                catch(ArgumentException e)
                 {
                     Console.WriteLine(e.Message);
                 }
@@ -122,16 +122,16 @@ namespace LexiconCSharpAssignmentOne
             }
         }
 
-        //Take the input from the user and does the checks on those inputs before starting the recursive function to calculate power of
-        public static double UserInputForPowerOf(Calculator calc, double num1, int numPower)
-        {
-            if (numPower > 0)
-                return calc.PowerOfMethod(num1, num1, --numPower);
-            else if (numPower < 0)
-                return 1 / calc.PowerOfMethod(num1, num1, ++numPower * -1);
-
-            return 1;
-        }
+        ////Take the input from the user and does the checks on those inputs before starting the recursive function to calculate power of
+        //public static double UserInputForPowerOf(Calculator calc, double num1, int numPower)
+        //{
+        //    if (numPower > 0)
+        //        return calc.PowerOfMethod(num1, num1, --numPower);
+        //    else if (numPower < 0)
+        //        return 1 / calc.PowerOfMethod(num1, num1, ++numPower * -1);
+        //
+        //    return 1;
+        //}
 
         private static double AskForInputDouble(string whatToAsk)
         {

@@ -23,7 +23,7 @@ namespace LexiconCSharpAssignmentOne
                 }
             }
             else
-                throw new IndexOutOfRangeException("No numbers were inputed to addition on a list");
+                throw new ArgumentException("No numbers were inputed to addition on a list");
 
             return totalValue;
         }
@@ -46,7 +46,7 @@ namespace LexiconCSharpAssignmentOne
                 }
             }
             else
-                throw new IndexOutOfRangeException("No numbers were inputed to substraction on a list");
+                throw new ArgumentException("No numbers were inputed to substraction on a list");
              return totalValue;
         }
 
@@ -101,37 +101,37 @@ namespace LexiconCSharpAssignmentOne
         }
         */
 
-        public double StartPowerOfMethod(double currentValue, double numberToBePowered, int count)
+        public double StartPowerOfMethod(double currentValue, double numberToBePowered, int numPower)
         {
-            if (count.Equals(0))
-                return 1;
-            return PowerOfMethod(currentValue, numberToBePowered, count);
+            //if (count.Equals(0))
+            //    return 1;
+            //return PowerOfMethod(currentValue, numberToBePowered, count);
+
+            if (numPower > 0)
+                return PowerOfMethod(currentValue, numberToBePowered, --numPower);
+            else if (numPower < 0)
+                return 1 / PowerOfMethod(currentValue, numberToBePowered, ++numPower * -1);
+
+            return 1;
         }
 
         //Calculate power of but with a recursive function.
         //It recives the current result(starts as numberToBePowered),
         //the number that is going to be powered and power as a count so the function knows when to stop
-        public double PowerOfMethod(double currentValue, double numberToBePowered, int count)
+        private double PowerOfMethod(double currentValue, double numberToBePowered, int count)
         {
+            //Multiplicate the current value with numberToBePowered each time the function is called just like with 2^3, 2*2=4*2=8
+            currentValue *= numberToBePowered;
+
+            //Reduce count each time so the function knows when to stop
+            count--;
+
             //If count has reached 0, return, if not then the function continues to call itself
             //If count is larger than 0, go through normal power to by multiplicate with the numerToBePowered.
             if (count > 0)
             {
-                //Multiplicate the current value with numberToBePowered each time the function is called just like with 2^3, 2*2=4*2=8
-                currentValue *= numberToBePowered;
-
-                //Reduce count each time so the function knows when to stop
-                count--;
-
                 return PowerOfMethod(currentValue, numberToBePowered, count);
-            }
-            //If count is less than 0, then we need to divide instead with numberToBePowered
-            else if(count < 0)
-            {
-                currentValue /= numberToBePowered;
-
-                count++;
-            }                
+            }          
 
             return currentValue;
         }
